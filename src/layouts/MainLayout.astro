@@ -1,24 +1,18 @@
 ---
-import '@/styles/global.css'
+import BaseHead from "@/components/BaseHead.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-  <head>
-    <!-- Global metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="favicon.ico" type="image/x-icon">
+  <BaseHead title={title} />
 
-    <!-- fonts -->
-    <link rel="stylesheet" href="/fonts/ProductSans-Bold.woff" as="font" type="font/woff" crossorigin />
-    <link rel="stylesheet" href="/fonts/ProductSans-Light.woff" as="font" type="font/woff" crossorigin />
-    <link rel="stylesheet" href="/fonts/ProductSans-Medium.woff" as="font" type="font/woff" crossorigin />
-    <link rel="stylesheet" href="/fonts/ProductSans-Regular.woff" as="font" type="font/woff" crossorigin />
-
-    <title>Blog Astro</title>
-  </head>
-  <body>
+  <body class="bg-dark-blue">
     <div>
       <main>
         <slot />
