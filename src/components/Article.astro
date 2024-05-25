@@ -1,5 +1,7 @@
 ---
 import { type  CollectionEntry } from "astro:content"
+import FormattedDate from "./FormattedDate.astro";
+
 type Props = CollectionEntry<"blog">["data"]
 
 const { title, tags, heroImage, pubDate } = Astro.props;
@@ -30,15 +32,8 @@ const { title, tags, heroImage, pubDate } = Astro.props;
                 ))
               }
             </div>
-            <p class="mt-6 text-sm text-zinc-400">
-              {
-                pubDate.toLocaleDateString("es-es", {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                })
-              }
-            </p>
+
+            <FormattedDate date={pubDate} />
           </div>
         </div>
       </a>
