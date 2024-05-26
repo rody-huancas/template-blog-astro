@@ -1,0 +1,24 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+    props: post,
+  }));
+}) satisfies GetStaticPaths;
+
+const {
+  body,
+  data: { heroImage, pubDate, tags, title },
+} = Astro.props;
+
+---
+
+
+<h1>Holi</h1>

@@ -2,9 +2,9 @@
 import { type  CollectionEntry } from "astro:content"
 import FormattedDate from "./FormattedDate.astro";
 
-type Props = CollectionEntry<"blog">["data"]
+type Props = CollectionEntry<"blog">["data"] & { slug: string };
 
-const { title, tags, heroImage, pubDate } = Astro.props;
+const { title, tags, heroImage, pubDate, slug } = Astro.props;
 
 ---
 <li
@@ -12,7 +12,7 @@ const { title, tags, heroImage, pubDate } = Astro.props;
 >
   <div transition:name={title}>
     <article>
-      <a href={`/blog/${tags}`}>
+      <a href={`/blog/${slug}`}>
         <img
           src={heroImage}
           alt=""

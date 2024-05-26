@@ -12,7 +12,7 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
       <ul class="space-y-8">
         {
           posts.map((post) => (
-            <Article {...post.data} />
+            <Article {...post.data} slug={post.slug} />
           ))
         }
       </ul>
