@@ -1,6 +1,7 @@
 ---
 import { type  CollectionEntry } from "astro:content"
 import FormattedDate from "./FormattedDate.astro";
+import { Image } from "astro:assets";
 
 type Props = CollectionEntry<"blog">["data"] & { slug: string };
 
@@ -13,7 +14,7 @@ const { title, tags, heroImage, pubDate, slug } = Astro.props;
   <div transition:name={title}>
     <article>
       <a href={`/blog/${slug}`}>
-        <img
+        <Image
           src={heroImage}
           alt=""
           width={1020}

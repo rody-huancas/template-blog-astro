@@ -16,7 +16,12 @@ export const getStaticPaths = (async () => {
   }));
 }) satisfies GetStaticPaths;
 
-const { body, data } = Astro.props;
+const post = Astro.props;
+
+const { Content } = await post.render();
+
 ---
 
-<BlogPost {...data} />
+<BlogPost {...post.data}>
+  <Content />
+</BlogPost>

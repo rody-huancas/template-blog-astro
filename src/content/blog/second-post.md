@@ -1,7 +1,7 @@
 ---
 title: "My Second Post"
 pubDate: "Jul 11 2024"
-heroImage: "https://generated.vusercontent.net/placeholder.svg"
+heroImage: "/assets/image-2.png"
 tags: ["JS", "TS"]
 ---
 
