@@ -1,6 +1,9 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
+import MainLayout from "@/layouts/MainLayout.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import BlogPost from "@/layouts/BlogPost.astro";
 
 export const getStaticPaths = (async () => {
   const posts = await getCollection("blog");
@@ -13,12 +16,7 @@ export const getStaticPaths = (async () => {
   }));
 }) satisfies GetStaticPaths;
 
-const {
-  body,
-  data: { heroImage, pubDate, tags, title },
-} = Astro.props;
-
+const { body, data } = Astro.props;
 ---
 
-
-<h1>Holi</h1>
+<BlogPost {...data} />
