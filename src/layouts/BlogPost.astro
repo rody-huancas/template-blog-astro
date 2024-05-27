@@ -12,7 +12,7 @@ const { title, heroImage, pubDate, tags } = Astro.props;
   <a href="/blog" class="bg-white px-5 py-2 m-10">
     Atrás
   </a>
-  <div class="text-white mt-10">
+  <div class="text-white mt-10" transition:name={title}>
     <h1 class="text-4xl">{title}</h1>
     <Image src={heroImage} alt={title} width={700} height={500} />
     <FormattedDate date={pubDate} />
